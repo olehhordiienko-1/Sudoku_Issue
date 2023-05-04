@@ -1,0 +1,29 @@
+<h1>Submit</h1>
+
+<%# if flash[:notice] %>
+<!--  <div class="alert alert-success">-->
+    <%#= flash[:notice] %>
+<!--  </div>-->
+<%# end %>
+
+<%# if flash[:alert] %>
+<!--  <div class="alert alert-danger">-->
+    <%#= flash[:alert] %>
+<!--  </div>-->
+<%# end %>
+
+<% @board.each do |row| %>
+  <p><%= row.join(" ") %></p>
+<% end %>
+
+<% if @status %>
+  <div class=success">
+    <h3>SUCCESSFULLY</h3>
+  </div>
+<% else %>
+  <div class=bad">
+    <h3>BAD TRY :(</h3>
+  </div>
+<% end %>
+
+<!--<p><%#= @status %></p>-->

@@ -1,0 +1,12 @@
+<h1>Home Sudoku</h1>
+<%= form_tag(sudoku_submit_path) do %>
+  <% @board.each_with_index do |row, i| %>
+    <% row.each_with_index do |col, j| %>
+      <%= label_tag("array[#{i}][#{j}]", "#{col}") %>
+      <%= text_field_tag("array[#{i}][#{j}]", col) %>
+    <% end %>
+    <br>
+  <% end %>
+  <%= submit_tag("manual", name:"solver", value: "MANUAL") %>
+  <%= submit_tag("auto", name:"solver", value: "AUTO") %>
+<% end %>
